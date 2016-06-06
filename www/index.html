@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+	<title>Involt</title>
+	<!--Involt UI kit-->
+	<link rel="stylesheet" type="text/css" href="css/framework.css">
+	<link rel="stylesheet" type="text/css" href="css/layout-components.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Uncomment to use wireframing overlay -->
+	<!--<link rel="stylesheet" type="text/css" href="css/proto.css">
+	<script src="cordova.js"></script>-->
+	<script src="core/jquery/jquery-2.1.0.min.js"></script>
+	<script src="core/jquery/jquery.nouislider.min.js"></script>
+	<script src="core/jquery/jquery.knob.js"></script>
+	<script src="core/jquery/insQ.min.js"></script>
+	<script src="settings.js"></script>
+	<script src="core/involt.js"></script>
+	<script src="core/framework.js"></script>
+
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="d3/d3.v3.js"></script>
+
+	<style>
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 align="center"> PhyNOMOnal </h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12" align="center" id="svg_col">
+			</div>
+			<!--<div class="col-md-5">
+				<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu23" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    Dropdown
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="#">Action</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
+				  </ul>
+				</div>-->
+				<!--<div class="row">
+					<div class="col-md-6">
+						<h4> Nomogram Type</h4>
+						<select name="Nomograms">
+					    <option value="A+B=C">A+B=C</option>
+					    <option value="A-B=C">A-B=C</option>
+					    <option value="A*B=C">A*B=C</option>
+					    <option value="A/B=C">A/B=C</option>
+					  </select>
+					</div>
+					<div class="col-md-6">
+						<form>
+						  First name:<br>
+						  <input type="text" name="firstname">
+						  <br>
+						  Last name:<br>
+						  <input type="text" name="lastname">
+						</form>
+					</div>
+				</div>-->
+			</div>
+		</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-2" id="NomoProperties">
+				<h4> Nomogram Type</h4>
+					<select name="Nomograms" id = "nomoselect">
+						<option value="A+B=C" id="A+B=C_option">A+B=C</option>
+						<option value="A-B=C" id="A/B=C_option" >A-B=C</option>
+						<option value="A*B=C" id="A*B=C_option" >A*B=C</option>
+						<option value="A/B=C" id="A/B=C_option">A/B=C</option>
+					</select>
+				<form>
+					A Domain:<br>
+					Minimum: <input type="text" name="a_min" id ="a_min_value" value="1"><br>
+					Maximum:<input type="text" name="a_min" id ="a_max_value" value="10"><br>
+					B Domain:<br>
+					Minimum: <input type="text" name="b_min" id ="b_min_value" value="1"><br>
+					Maximum:<input type="text" name="b_min" id ="b_max_value" value="10"><br>
+				</form>
+			</div>
+			<div class="col-md-2" id="NomoColumn">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/d3_code.js"></script>
+	<div class="ard show A3" style="visibility:hidden" id="PA0"></div>
+	<div class="ard show A4" style="visibility:hidden" id="PA1"></div>
+	<div class="ard show A5" style="visibility:hidden" id="PA2"></div>
+
+
+</body>
+
+</html>
